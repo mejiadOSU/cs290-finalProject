@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document  USED TO STYLE ALL THE PAGES Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry */
+.pageHeader { background-color: #006666; padding-top:10px; font-family:Arial, Helvetica, sans-serif; padding-left:1%; width:100%; height:1%; border:0;}
+
+.links { color:#666; text-align:left; padding:10px;}
+
+.error { color: red; }
+
+header { font-size:24px; color:#FFF; font-weight:bold; font-stretch:expanded; }
+
+table{background-color: #FFFFFF; text-align:left; font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+
+h3{ font-size:30px; }
+
+p{ font-size:18px; color:#666;}
+
+td{ width:80%; text-align:left; font-family:Arial, Helvetica, sans-serif; font-size:9px; font-weight:bold; }
+
+th{ width:40%; text-align:left; vertical-align:top; font-family:Arial, Helvetica, sans-serif; font-size:36px; }
+
+caption{ text-align:left; font-variant:small-caps; font-family:Arial, Helvetica, sans-serif; font-size:28px; font-weight:bold;}
+
+body { font-family:Arial, Helvetica, sans-serif; font-size:24px;	}
+
+a { font-size:24px;  }
+a:link { color:#066; }
+a:visited { color:#963; }
+
+footer{ text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-stretch:expanded; font-weight:bold; color:#999999; }
+
+hr { width:90%; size: 8px; height: 5px; background-color: #CCCCCC; }
+
+h1{ font-size:60px; text-align:center; }
+
+ul{  text-align:center;}

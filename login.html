@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--  Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry -->
+
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script> // LOAD XML CODE FROM http://www.w3schools.com/ajax/ajax_xmlhttprequest_send.asp
+            function loadXMLDoc(option){ // MODIFIED CODE ABIT TO FIT MY NEEDS
+            var xmlhttp;
+            if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+            }else{// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");}
+            
+            xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState===4 && xmlhttp.status===200){
+            document.getElementById("printHere").innerHTML=xmlhttp.responseText;}
+            };
+            
+            //GETS DATA INPUT FROM FORM FOR AJAX CALL
+            userName = document.getElementById('userEntry').value;
+            userPassword = document.getElementById('userPassword').value;
+            newUserRequest = document.getElementById('newUser').value;
+            
+            //IF EMPTY THIS WILL SEND THE USER AN ERROR MSG
+                if (userName === "" || userPassword === ""){
+                    window.alert("Enter a user name and password please");
+                }else{
+            xmlhttp.open("GET","database.php?password="+userPassword+"&username="+userName+"&new="+newUserRequest, true);
+            xmlhttp.send();
+            document.getElementById('userEntryForm').style.display = 'none';
+            document.getElementById('footer').style.display = 'none';
+            document.getElementById('hr').style.display = 'none';// HAD DUPLICATES POP UP TO I MADE THEM HIDE AFTER THE CLICK
+            // HIDE CODE IDEA CAME FROM http://stackoverflow.com/questions/6957443/how-to-display-div-after-click-the-button-in-javascript
+            }
+            }
+            // USED TO CHANGE VALUE OF THE CHECKBOX FOR NEW USER USE
+            function changeValue(){
+                document.getElementById('newUser').value = 'yes';
+            }
+            
+        </script>
+        <link href="stylez.css" rel="stylesheet" type="text/css">
+        <title>Login Page</title>
+    </head>
+    <body>
+
+    <table bgcolor="#999900" width="100%" class="pageHeader" >
+    <tr>
+        <td><header>Contract Login Page</header></td>
+    </tr>
+    </table>
+        
+        <br><br>
+        
+        <form id="userEntryForm" style="display: block;">
+            Enter name: <input id="userEntry"  type="text" >
+            password: <input id="userPassword"  type="password" >
+            <br>New users check here: <input onchange="changeValue();" name="userChecked" type="checkbox" id="newUser" >
+            <br><input type="button" value="Enter" onclick="loadXMLDoc();">
+        </form>
+        
+        <div id="printHere"></div>        
+        
+    </body>
+    <br/>
+    <br/>
+    <br/>
+    <hr id="hr">
+
+    <footer id="footer" >Contracts Database by Danny Mejia</footer>
+    
+</html>
