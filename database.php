@@ -1,9 +1,8 @@
-<!--  Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry -->
 <?php
 session_start();
 include 'storedInfo.php'; // stores secret code and opens mysqli table
 // THIS FILE DOES ALL THE NEW USER CREATOR AND USER/PASSSWORD CHECKER
-
+// Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry
 // IF ITS A NEW CONTRACT THEN ATTEMPT TO MAKE A NEW USER CODE
 if ($_GET['new'] === 'yes'){
     $sql = "INSERT INTO $userTable (userName, password) VALUES ('$userName', '$password')";
