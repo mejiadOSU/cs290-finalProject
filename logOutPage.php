@@ -1,5 +1,7 @@
 <?php
-session_start(); //Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry
+session_start();
+include 'storedInfo.php'; // stores secret code and opens mysqli table
+//Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry
 ?>
 
 <!DOCTYPE html>
