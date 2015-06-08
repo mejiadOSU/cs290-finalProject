@@ -95,7 +95,7 @@ if(isset($_POST['deleteContract'])) {
     $sql = "DELETE FROM $table WHERE number = '$contractNumber'";
 
     if ($mysqli->query($sql) === TRUE) {
-        echo "Contract deleted successfully";
+        echo "Contract successfully deleted";
     } else {
         echo "<p class=\"error\">Error deleting contract: " . $mysqli->error . "</p>";
     }
@@ -117,7 +117,7 @@ if(isset($_POST['makePrivate'])){
     $contractNumber = $_POST['makePrivate'];
     $sql = "UPDATE $table SET userName = '$userName' WHERE number = '$contractNumber'";
     if ($mysqli->query($sql) === TRUE) {
-        echo "Successfully made public";
+        echo "Successfully made private";
     } else {
         echo "Error: " . $mysqli->error;
     }
