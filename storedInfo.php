@@ -1,10 +1,9 @@
-<!--  Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry -->    
 <?php
     session_start();
     $myPassword = "F5zcV4Nw2CXI3YOC";
     $table = 'contractTable'; // table created assosiated with these functions
     $userTable = 'users';
- 
+ //  Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry
     if (isset($_REQUEST['username'])){
         $_SESSION['name'] = $_REQUEST['username'];  
     }else{

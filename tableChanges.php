@@ -1,9 +1,9 @@
-<!--  Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry -->
 <?php
-/*session code ides from class tutorials found here 
- *http://stackoverflow.com/questions/1545357/how-to-check-if-a-user-is-logged-in-in-php*/
 session_start();
 include 'storedInfo.php'; // stores secret code and opens mysqli table
+// Danny Mejia CS290 Final project. Its a contract database able to make new users and check password and user entry
+/*session code ides from class tutorials found here 
+ *http://stackoverflow.com/questions/1545357/how-to-check-if-a-user-is-logged-in-in-php*/
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -95,7 +95,7 @@ if(isset($_POST['deleteContract'])) {
     $sql = "DELETE FROM $table WHERE number = '$contractNumber'";
 
     if ($mysqli->query($sql) === TRUE) {
-        echo "Contract deleted successfully";
+        echo "Contract successfully deleted";
     } else {
         echo "<p class=\"error\">Error deleting contract: " . $mysqli->error . "</p>";
     }
@@ -117,7 +117,7 @@ if(isset($_POST['makePrivate'])){
     $contractNumber = $_POST['makePrivate'];
     $sql = "UPDATE $table SET userName = '$userName' WHERE number = '$contractNumber'";
     if ($mysqli->query($sql) === TRUE) {
-        echo "Successfully made public";
+        echo "Successfully made private";
     } else {
         echo "Error: " . $mysqli->error;
     }
